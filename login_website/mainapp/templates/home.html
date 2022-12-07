@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Website</title>
+
+</head>
+
+<body>
+
+    {% block content %}
+
+        {% if user.is_authenticated %}
+
+            <div class="container">
+
+                <h1>Hello, {{ user.username }}, what would you like to do?</h1>
+                <hr>
+
+                <div class="form-group">
+                    <form method="POST">
+
+                        <a href="{% url 'notes' %}" class="btn btn-light">My notes</a>
+                        <a href="{% url 'create-note' %}" class="btn btn-light">Add note</a>
+                        <a href="{% url 'logout' %}" class="btn btn-light">Logout</a>
+                
+                    </form>
+                </div>
+
+            </div>
+
+        {% else %}
+
+            <div class="container">
+                
+                <h1>Hello, you are not logged in.</h1>
+                <hr>
+
+                <div class="form-group">
+                    <form method="POST">
+                
+                        <a href="{% url 'login' %}" class="btn btn-light">Login</a>
+                        <a href="{% url 'register' %}" class="btn btn-light">Register</a>
+        
+                    </form>
+                </div>
+
+            </div>
+
+        {% endif %}
+
+    {% endblock %}
+
+</body>
+
+</html>
