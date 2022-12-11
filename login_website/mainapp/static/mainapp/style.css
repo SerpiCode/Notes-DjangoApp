@@ -1,0 +1,44 @@
+:root {
+    --ShadowOne: rgba(0, 0, 0, 0.2);
+    --ShadowTwo: rgba(0, 0, 0, 0.19);
+    --backgroundColor: #f8f9fa;
+    --btnColorOne: #6c757d;
+    --btnColorTwo: #343a40;
+}
+
+*, *::before, *::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 1em;
+    background-color: var(--backgroundColor);
+}
+
+.main{
+    background-color: white;
+    margin: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 8px 0 var(--ShadowOne), 0 6px 20px 0 var(--ShadowTwo);
+}
+
+.smbtn{
+    text-decoration: none;
+    font-size: 0.85rem;
+    color: var(--btnColorOne);
+    transition: 0.3s;
+    margin-right: 0.5em;
+}
+
+.smbtn:hover{
+    color: var(--btnColorTwo);
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+ul{
+    list-style-type: none;
+}
+

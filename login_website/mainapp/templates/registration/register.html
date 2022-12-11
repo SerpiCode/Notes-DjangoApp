@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sign Up</title>
+
+</head>
+
+<body>
+
+    {% block content %}
+
+    <div class="container main">
+
+    <h1>Sign Up</h1>
+    <hr>
+
+    <div class="form-group">
+        <form method="POST">
+
+            {% csrf_token %}
+
+            {{ form.as_p }}
+            <button class="btn btn-success">Register</button>
+            <a href="{% url 'home' %}" class="btn btn-light">Home</a>
+
+        </form>
+    </div>
+
+    </div>
+
+    {% endblock %}
+
+</body>
+
+</html>
